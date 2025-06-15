@@ -1,38 +1,89 @@
+html {
+  background-image: url(../public/carambar.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  margin: 5em 25em 20em;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.nav {
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.nav div a {
+  display: flex;
+  margin: 0em 2em;
+  /* padding: 1em; */
+  font-size: large;
+  font-weight: bold;
+  color: rgb(255, 13, 203);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.card {
+  margin: 15em 40em;
+  padding: 1em;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+  margin-bottom: 1.5em;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
   color: white;
+  font-weight: bolder;
+  background-color: rgb(255, 13, 203);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background-color: rgb(208, 8, 164);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.joke {
+  padding: 1em;
+  margin: 2em;
+  color: aliceblue;
+  font-weight: bolder;
+  background-color: rgb(255, 13, 203);
+  border-radius: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 4em;
+  color: white;
+  background-color: black;
 }

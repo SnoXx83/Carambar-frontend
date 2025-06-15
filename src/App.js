@@ -1,48 +1,72 @@
 import { useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import logo from './assets/logo.png'
 
 function App() {
 
-  const [joke, setJoke]= useState(null);
-  const [error, setError]= useState(null);
+  const [joke, setJoke] = useState(null);
+  const [error, setError] = useState(null);
 
-  const fetchRandomJoke= async ()=>{
+  const fetchRandomJoke = async () => {
     setJoke(null);
     setError(null);
     try {
-      const response= await axios.get("http://localhost:4000/api/jokes/random");
+      const response = await axios.get("http://localhost:4000/api/jokes/random");
       setJoke(response.data);
     } catch (error) {
       console.error("Error fetching random joke: ", error);
-      if(error.response){
+      if (error.response) {
         setError(error.response.data.message || `Server Error: ${error.response.status}`);
-      }else if(error.request){
+      } else if (error.request) {
         setError("No server response. Check the connection or state of backend");
-      }else{
+      } else {
         setError(error.message);
       }
     }
   };
 
   return (
-    <div className="App">
-      <header>
-        <h1>Carambar & Co</h1>
-        <button onClick={fetchRandomJoke}>Afficher une Blague Aléatoire</button>
-
-        {error && <p>Erreur: {error}</p>}
-
-        {joke && (
-          <div>
-            <p> {joke.question} </p>
-            <p> {joke.response} </p>
-            {joke.id && <small> (Cliquer pour re-afficher cette blague: {joke.id}) </small>}
+    <>
+      <div className="App">
+        <header>
+          <div className=' nav d-flex'>
+            <a href='#'>
+              <img src={logo} alt="" />
+            </a>
+            <div className='d-flex'>
+              <a href='#'>Accueil</a>
+              <a href='#'>Produits</a>
+              <a href='#'>Contact</a>
+              <a href='#'>A propos</a>
+            </div>
           </div>
-        )}
-        {!joke && !error && <p>Cliquez sur le bouton pour découvrir une blague !</p>}
-      </header>
-    </div>
+        </header>
+        <div className='card'>
+          <h1>Vous cherchez une blague ?</h1>
+          {joke && (
+            <>
+              <div className='joke'>
+                <p> {joke.question} </p>
+                <p> {joke.response} </p>
+              </div>
+              <div>
+                {joke.id && <small> (Cliquer pour une nouvelle blague) </small>}
+              </div>
+              <br />
+            </>
+          )}
+          <button className='btn' onClick={fetchRandomJoke}>Cliquez ici !</button>
+
+          {error && <p>Erreur: {error}</p>}
+
+          {!joke && !error && <p>Cliquez sur le bouton pour découvrir une blague !</p>}
+        </div>
+      </div>
+      <footer>
+          @Copyright by Maxime LARQUETOUX 2025
+      </footer>
+    </>
   );
 }
 
