@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Carambar-frontend/static/css/main.641b906b.css",
+    "main.js": "/Carambar-frontend/static/js/main.b7ec3e45.js",
+    "static/media/carambar.png": "/Carambar-frontend/static/media/carambar.0be539fd50c24e978624.png",
+    "index.html": "/Carambar-frontend/index.html",
+    "main.641b906b.css.map": "/Carambar-frontend/static/css/main.641b906b.css.map",
+    "main.b7ec3e45.js.map": "/Carambar-frontend/static/js/main.b7ec3e45.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.641b906b.css",
+    "static/js/main.b7ec3e45.js"
+  ]
+}
