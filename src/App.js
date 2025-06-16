@@ -8,11 +8,13 @@ function App() {
   const [joke, setJoke] = useState(null);
   const [error, setError] = useState(null);
 
+  const API_BASE_URL= "https://carambar-backend-53rm.onrender.com/api/jokes";
+
   const fetchRandomJoke = async () => {
     setJoke(null);
     setError(null);
     try {
-      const response = await axios.get("http://localhost:4000/api/jokes/random");
+      const response = await axios.get(`${API_BASE_URL}/random`);
       setJoke(response.data);
     } catch (error) {
       console.error("Error fetching random joke: ", error);
